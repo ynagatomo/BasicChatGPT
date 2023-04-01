@@ -83,6 +83,33 @@ The app consists of simple SwiftUI Views, a View Model, Models, a Manager, and O
 
 ![Image](assets/types_1600.png)
 
+## Customization
+
+### Chat Color
+
+Change the color of chat foreground and background as you like.
+Set colors for light mode and dark mode of the ColorSet in the Assets.catalog.
+
+Defined ColorSet in Assets.catalog:
+
+- `UserChatFG` / `AIChatFG` ... foreground color of each chat (user / AI)
+- `UserChatBG` / `AIChatBG` ... background color of each chat (user / AI)
+- `XXXXX 1` ... default color (You can use it to easily restore defaults.)
+
+![Image](assets/color_1024.png)
+
+## Coniderations
+
+### OpenAI's data usage policies
+
+OpenAI says,
+
+- `"By default, OpenAI will not use data submitted by customers via our API to train OpenAI models or improve OpenAI’s service offering."`
+- `"OpenAI retains API data for 30 days for abuse and misuse monitoring purposes."`
+
+It seems using the paid OpenAI API is safer than using their free Chat-GPT webpage.
+
+* OpenAI data usage policies: https://openai.com/policies/api-data-usage-policies
 
 ## References
 
