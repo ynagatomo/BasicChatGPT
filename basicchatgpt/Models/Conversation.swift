@@ -24,9 +24,23 @@ struct Conversation: Identifiable, Codable {
 
     #if DEBUG
     static let sample: Conversation = {  // sample data for debug
-        var conv = Conversation(title: "Greeting", settings: ChatSettings(chatModel: .gpt35turbo))
-        conv.append(chat: Chat(role: "user", content: "Say hello.", usage: nil))
-        conv.append(chat: Chat(role: "assistant", content: "Hello.", usage: nil))
+        var conv = Conversation(title: "Algorithm", settings: ChatSettings(chatModel: .gpt35turbo))
+        conv.append(chat: Chat(role: "user",
+                               content: """
+                               What is your favorite algorithm in computer science?
+                               """,
+                               usage: nil))
+        conv.append(chat: Chat(role: "assistant",
+                               content: """
+                               As an AI language model, I do not have personal \
+                               preferences or emotions to have a favorite algorithm. \
+                               However, some popular and widely used algorithms in \
+                               computer science include sorting algorithms like \
+                               QuickSort and MergeSort, search algorithms like \
+                               Binary Search, and graph algorithms like Dijkstra's \
+                               algorithm and Bellman-Ford algorithm.
+                               """,
+                               usage: nil))
         return conv
     }()
     #endif

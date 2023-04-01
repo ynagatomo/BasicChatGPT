@@ -36,9 +36,12 @@ struct ChatView: View {
 
             HStack {
                 Spacer()
+
+                // Icon
+
                 Image(systemName: "server.rack")
                     .font(.system(size: 30))
-                    .foregroundColor(Color("AIChatBG"))
+                    .foregroundColor(Color("AIChatFG"))
 
                 // Selected GPT model name
 
@@ -64,9 +67,6 @@ struct ChatView: View {
                           ? "person.fill" : "server.rack")
                         .font(.system(size: 30))
                         .frame(width: 32)
-                        .foregroundColor(chat.role == OpenAIChatRole.user.rawValue
-                                         ? Color("UserChatBG")
-                                         : Color("AIChatBG"))
 
                     // Textfield (editable and deletable)
 
@@ -79,6 +79,9 @@ struct ChatView: View {
                         .focused($isFocused)
                 }
                 .listRowSeparator(.hidden)
+                .foregroundColor(chat.role == OpenAIChatRole.user.rawValue
+                                 ? Color("UserChatFG")
+                                 : Color("AIChatFG"))
             }
             .toolbar { // Button to hide the keyboard by unfocusing
                 ToolbarItemGroup(placement: .keyboard) {
