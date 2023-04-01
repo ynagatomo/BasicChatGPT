@@ -11,7 +11,9 @@ A minimal iOS app that interacts with OpenAI Chat GPT-3.5/4.
 
 ## Change Log
 
-none
+- Apr 2, 2023 [Added]
+    - At chat view, you can move messages, in addition to deletion. 
+    Conversation can be reconstructed more flexible.
 
 ## Abstract
 

@@ -54,7 +54,7 @@ struct ChatView: View {
 
             // Chat messages
 
-            List($chatStore.conversations[conversationIndex].chats, editActions: .delete) { $chat in
+            List($chatStore.conversations[conversationIndex].chats, editActions: .all /* .delete */ ) { $chat in
                 HStack {
 
                     // Icon
