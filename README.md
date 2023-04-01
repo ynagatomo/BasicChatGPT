@@ -11,9 +11,11 @@ A minimal iOS app that interacts with OpenAI Chat GPT-3.5/4.
 
 ## Change Log
 
-- Apr 2, 2023 [Added]
-    - At chat view, you can move messages, in addition to deletion. 
-    Conversation can be reconstructed more flexible.
+- [1.2 (2)] - Apr 2, 2023 [Added]
+    - In the chat view, a button on a keyboard was added to hide.
+- [1.1 (1)] - Apr 2, 2023 [Added]
+    - In the chat view, messages can be moved in the conversation in addition to deletion. 
+    You can reconstruct the conversation more flexibly.
 
 ## Abstract
 
@@ -30,19 +32,19 @@ Until then, please use GPT-3.5 models.
 
 ### Features
 
-- Users can set their API Key in User Settings, to make conversations with OpenAI GPT.
-- Users can make any number of conversations with OpenAI GPT 3.5 or 4 and delete them.
-- In a conversation, users can send any messages to OpenAI GPT as a user role or even an assistant role and delete any message.
-- In a conversation, users can configure GPT's behavior by changing Chat Setting such as GPT model, parameters and system role.
+- Users can set their API Key in User Settings, to use the OpenAI API for GPT-3.5/4.
+- Users can make any number of conversations and delete them.
+- In conversations, users can send messages to OpenAI GPT. Users can reconstruct the messages by editing text or deleting messages, or moving messages' position in the conversation. This will change the conversation's direction.
+- For each conversation, users can configure GPT's behavior by changing Chat Setting such as GPT model, parameters and system role.
 
 ### Usage
 
 1. Set your API Key in the User Setting. This will be stored in UserDefaults.
 1. Add a conversation and select it.
-1. Add a message of user or assistant and edit the content.
+1. Add a message of user or assistant (AI) and edit the content.
 1. Send the conversation to OpenAI GPT.
 1. The response from OpenAI GPT will be shown. The conversation will be stored in a file on a device.
-1. Edit any messages or delete any messages and re-send the conversation to OpenAI GPT.
+1. Edit/delete/move any messages and re-send the conversation to OpenAI GPT.
 1. You will be receive different conversation this time.
 
 ![Image](assets/ui_1600.png)

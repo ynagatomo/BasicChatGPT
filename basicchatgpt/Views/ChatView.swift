@@ -12,6 +12,7 @@ import SwiftUI
 struct ChatView: View {
     @EnvironmentObject var chatStore: ChatStore
     @State private var showingChatSettings = false
+    @FocusState private var isFocused: Bool  // focus on a keyboard
 
     // A conversation related to this view.
     let conversationID: UUID
@@ -75,8 +76,16 @@ struct ChatView: View {
                                     ? Color("UserChatBG").cornerRadius(10)
                                     : Color("AIChatBG").cornerRadius(10))
                         .fontWeight(.light)
+                        .focused($isFocused)
                 }
                 .listRowSeparator(.hidden)
+            }
+            .toolbar { // Button to hide the keyboard by unfocusing
+                ToolbarItemGroup(placement: .keyboard) {
+                    Button(action: { isFocused = false }, label: {
+                        Label("Hide", systemImage: "arrow.down")
+                    })
+                }
             }
             .textSelection(.enabled)        // User is allowed to select the text.
             .safeAreaInset(edge: .bottom) { // Buttons over the list at bottom
