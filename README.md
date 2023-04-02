@@ -57,6 +57,16 @@ Until then, please use GPT-3.5 models.
 ![Image](assets/ui2_1600.png)
 <!-- ![GIF](assets/movie.gif) -->
 
+### thinking with multiple scenarios
+
+By tapping the duplicate icon in the chat view, the current conversation will be duplicated.
+By modifying the messages (editing text, deleting messages or moving message's positions), users can get another responses from OpenAI GPT.
+And the conversations are stored to review later.
+
+User can send multiple conversations to OpenAI GPT simultaneously.
+
+![Image](assets/duplicate_1600.png)
+
 ## Preparation to build and run the project
 
 ### Get the OpenAI API Key
