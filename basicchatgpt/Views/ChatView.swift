@@ -141,6 +141,17 @@ struct ChatView: View {
             .navigationBarTitleDisplayMode(.inline) // should be inline mode for editing
             .toolbarRole(.editor)                   // aligned to leading edge
             .toolbar {
+                ToolbarItem(id: "duplicate", placement: .primaryAction) {
+
+                    // Button for duplication of conversation
+
+                    Button(action: {
+                        duplicate()
+                    }, label: {
+                        Image(systemName: "doc.on.doc")
+                    })
+                }
+
                 ToolbarItem(id: "settings", placement: .primaryAction) {
 
                     // Button for Chat Settings
@@ -151,17 +162,6 @@ struct ChatView: View {
                         Image(systemName: "gearshape.2")
                         //                Image(systemName: "gear")
                         //                Text("Chat Settings")
-                    })
-                }
-
-                ToolbarItem(id: "duplicate", placement: .secondaryAction) {
-
-                    // Button for duplication of conversation
-
-                    Button(action: {
-                        duplicate()
-                    }, label: {
-                        Image(systemName: "doc.on.doc")
                     })
                 }
             } // toolbar
