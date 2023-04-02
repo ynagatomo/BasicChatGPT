@@ -88,4 +88,10 @@ struct Conversation: Identifiable, Codable {
         chats.append(chat)      // add the chat (message) to this conversation
         lastUpdated = Date()    // update the date
     }
+
+    @discardableResult
+    mutating func updateID() -> UUID {
+        id = UUID()
+        return id
+    }
 }

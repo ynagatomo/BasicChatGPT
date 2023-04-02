@@ -107,7 +107,7 @@ final class ChatStore: ObservableObject {
             presencePenalty: presencePenalty,
             frequencyPenalty: frequencyPenalty)
 
-        // The conversation can be deleted while awaiting.
+        // The conversation can be deleted or moved the index while awaiting.
         if let index2 = conversationIndex(of: id) {
             conversations[index2].state = .idle
             let chat = Chat(role: response.role,
@@ -141,6 +141,30 @@ final class ChatStore: ObservableObject {
         conversations[0].addChat()
 
         return conversation.id  // ID of the new conversation
+    }
+
+    // Duplicate the conversation
+    @discardableResult
+    func duplicateConversation(of conversationID: UUID) -> UUID? {
+
+        // duplicate the conversation of the ID
+
+        if var duplicated = conversation(of: conversationID) {
+            let newID = duplicated.updateID()   // assign new ID
+            duplicated.state = .idle            // don't duplicate state
+
+            // insert it in the conversation list
+
+            if let index = conversationIndex(of: conversationID) {
+                conversations.insert(duplicated, at: index + 1)
+                return newID
+            } else {
+                assertionFailure("Invalid conversation ID.")
+                return nil
+            }
+        }
+        assertionFailure("Invalid conversation ID.")
+        return nil
     }
 
     // Add a message (chat) to the conversation of the index

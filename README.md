@@ -11,6 +11,9 @@ A minimal iOS app that interacts with OpenAI Chat GPT-3.5/4.
 
 ## Change Log
 
+- [1.3 (4)] - Apr 2, 2023 [Fix/Added]
+    - Fixed a bug related to conversation deletion
+    - Added the conversation duplication feature. Tap the duplication icon in chat view, to duplicate the conversation to make another thread.
 - [1.2.1 (3)] - Apr 2, 2023 [Added]
     - Add ColorSet(UserChatFG, AIChatFG) for char foreground color in addition to chat background color (UserChatBG, AIChatBG). 
     Now you can change the color easily. ColorSet: "XXX 1"s are default colors.
